@@ -1,5 +1,8 @@
 #include <iostream>
-#include "../include/queue/arrayQueue.h"
+#include <vector>
+#include <string>
+#include <map>
+#include <set>
+#include "../include/index.h"
 
-int main () {
-}
+int main () {}
