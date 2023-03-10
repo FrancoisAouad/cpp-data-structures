@@ -1,9 +1,6 @@
 #include "./queue.interface.h"
 #include "stdexcept"
 
-/**
- * Class describing Array implementation of queues 
- */
 template <typename T>
 class ArrayQueue : public QueueInterface<T> {
 private:
@@ -15,19 +12,18 @@ private:
 public:
     ArrayQueue(int capacity) : capacity(capacity), size(0), head(0), tail(-1) {
         if (capacity <= 0) {
-            throw std::invalid_argument("Queue capacity must be positive");
+            throw std :: invalid_argument("Queue capacity must be positive");
         }
         data = new T[capacity];
     }
 
-    // destructor
     virtual ~ArrayQueue() {
         delete[] data;
     }
 
     void enqueue(const T& val) override {
         if (size == capacity) {
-            throw std::overflow_error("Queue is full.");
+            throw std :: overflow_error("Queue is full.");
         }
         ++size;
         tail = (tail + 1) % capacity;
@@ -36,7 +32,7 @@ public:
 
     T dequeue() override {
         if (size == 0) {
-            throw std::underflow_error("Queue is empty.");
+            throw std :: underflow_error("Queue is empty.");
         }
         --size;
         T val = data[head];
@@ -54,7 +50,7 @@ public:
 
     const T& front() const override {
         if (size == 0) {
-            throw std::underflow_error("Queue is empty.");
+            throw std :: underflow_error("Queue is empty.");
         }
         return data[head];
     }

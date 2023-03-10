@@ -45,8 +45,8 @@ public:
 			printRange(root -> getLeft(), low, high);
 		if (low <= root -> getValue() && high >= root -> getValue())
 		{
-			std::cout << root -> getValue();
-			std::cout << " ";
+			std :: cout << root -> getValue();
+			std :: cout << " ";
 		}
 		if (high > root -> getValue())
 			printRange(root -> getRight(), low, high);
@@ -68,7 +68,7 @@ public:
 	int countLeaf (BinaryTree<T>* root) override {
 		if (root == nullptr)
 			return  0;
-		if (root->getLeft() == nullptr && root->getRight() == nullptr)
+		if (root -> getLeft() == nullptr && root -> getRight() == nullptr)
 			return 1;
 		return countLeaf(root -> getLeft()) + countLeaf(root -> getRight());
 	}
@@ -77,14 +77,15 @@ public:
 			return 0;
 		return sumNode(root -> getValue) + sumNode(root -> getLeft) + sumNode(root -> getRight);
 	}
-	void printMultipleFive (BinaryTree<T>* root) override {
+	void printMultipleOfK (BinaryTree<T>* root, int k) override {
 		if (root == nullptr)
 			return;
-		if (root -> getValue() % 5 == 0)
+		if (root -> getValue() % k == 0) {
 			cout << root -> getValue();
-		cout << " ";
-		printMultipleFive(root -> getLeft());
-		printMultipleFive(root -> getRight());
+		    std :: cout << " ";
+		}
+		printMultipleOfK(root -> getLeft());
+		printMultipleOfK(root -> getRight());
 	}
 	bool isBST (BinaryTree<T>* root) override {
 		if (root == nullptr)

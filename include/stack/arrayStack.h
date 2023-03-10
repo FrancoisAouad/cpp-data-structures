@@ -9,22 +9,18 @@ private:
     int top_index;
     T* data;
 public:
-    // Constructor
     arrayStack(int capacity) : capacity(capacity), size(0), top_index(-1) {
         if (capacity <= 0) {
-            throw std::invalid_argument("Stack capacity must be positive");
+            throw std :: invalid_argument("Stack capacity must be positive");
         }
         data = new T[capacity];
     }
-
-    // Destructor
      ~arrayStack() {
         delete[] data;
     }
-
     void push(T val) override {
         if (size == capacity) {
-            throw std::overflow_error("Stack is full.");
+            throw std :: overflow_error("Stack is full.");
         }
         ++size;
         data[++top_index] = val;
@@ -32,7 +28,7 @@ public:
 
     T pop() override {
         if (size == 0) {
-            throw std::underflow_error("Stack is empty.");
+            throw std :: underflow_error("Stack is empty.");
         }
         --size;
         return data[top_index--];
@@ -48,7 +44,7 @@ public:
 
     T top() const override {
         if (size == 0) {
-            throw std::underflow_error("Stack is empty.");
+            throw std :: underflow_error("Stack is empty.");
         }
         return data[top_index];
     }

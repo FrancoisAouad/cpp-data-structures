@@ -38,7 +38,7 @@ public:
 
     void remove(int index) override {
         if (index < 0 || index >= size) {
-            throw std::out_of_range("Invalid index.");
+            throw std :: out_of_range("Invalid index");
         }
         if (index == 0) {
             Node* oldHead = head;
@@ -58,7 +58,7 @@ public:
 
    const T get(int index) const override {
         if (index < 0 || index >= size) {
-            throw std::out_of_range("Invalid index.");
+            throw std :: out_of_range("Invalid index");
         }
         return data[index];
     }

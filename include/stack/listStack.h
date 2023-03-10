@@ -27,7 +27,7 @@ public:
 
     T pop() {
         if (!head) {
-            throw std::underflow_error("Stack is empty.");
+            throw std :: underflow_error("Stack is empty");
         }
         T val = head->data;
         Node* oldHead = head;
@@ -38,7 +38,7 @@ public:
 
     T top() const {
         if (!head) {
-            throw std::underflow_error("Stack is empty.");
+            throw std :: underflow_error("Stack is empty");
         }
         return head->data;
     }

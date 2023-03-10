@@ -32,7 +32,7 @@ public:
 
     T dequeue() override {
         if (!head) {
-            throw std::underflow_error("Queue is empty.");
+            throw std :: underflow_error("Queue is empty");
         }
         T val = head->data;
         Node* oldHead = head;
@@ -46,7 +46,7 @@ public:
 
     const T& front() const override {
         if (!head) {
-            throw std::underflow_error("Queue is empty.");
+            throw std :: underflow_error("Queue is empty");
         }
         return head->data;
     }
